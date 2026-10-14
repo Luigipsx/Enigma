@@ -21,9 +21,9 @@ def criar_engine(tipo_banco: str):
         senha = os.getenv("MYSQL_PASSWORD")
         banco = os.getenv("MYSQL_DATABASE")
         servidor = os.getenv("MYSQL_HOST")
-        porta = os.getenv("MYSQL_PORT", "12960")
+        porta = os.getenv("MYSQL_PORT", "3306")
 
-        if not all([usuario, senha, banco, servidor]):
+        if not all([usuario, banco, servidor]):
             raise ValueError(
                 "As configurações do MySQL não foram encontradas no .env."
             )
